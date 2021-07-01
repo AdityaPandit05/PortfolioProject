@@ -1,10 +1,11 @@
---SELECT *
---FROM MY_First_Project..Covid_Deaths$
---ORDER BY 3,4
+--Preview of the two tables 
+SELECT *
+FROM MY_First_Project..Covid_Deaths$
+ORDER BY 3,4
 
---SELECT *
---FROM MY_First_Project..Covid_Vaccination$
---ORDER BY 3,4 (This is the data that we will be using in the project)
+SELECT *
+FROM MY_First_Project..Covid_Vaccination$
+ORDER BY 3,4 (This is the data that we will be using in the project)
 
 SELECT location, date, total_cases, new_cases, total_deaths, gdp_per_capita 
 FROM MY_First_Project..Covid_Deaths$
