@@ -24,21 +24,21 @@ FROM MY_First_Project..Covid_Deaths$
 GROUP BY location
 ORDER BY Highest_cases DESC
 
--- Showing countries with highest fatality rate (MY CODE)
+-- Showing countries with highest fatality rate
 SELECT location, MAX (total_deaths) AS DEATHS, MAX(total_cases) AS CASES, MAX(gdp_per_capita) AS GDP_PER_CAPITA, (MAX(total_deaths*100)/MAX(total_cases)) AS FATALITIES
 FROM MY_First_Project..Covid_Deaths$
 WHERE total_cases IS NOT NULL AND total_deaths IS NOT NULL AND gdp_per_capita IS NOT NULL 
 GROUP BY location
 ORDER BY FATALITIES DESC
 
---SORTED BY MAXIMUM DEATHS (VIDEO CODE)
+--SORTED BY MAXIMUM DEATHS 
 SELECT location, MAX (CAST (total_deaths as int)) AS DEATHS, MAX(total_cases) AS CASES, MAX(gdp_per_capita) AS GDP_PER_CAPITA, (MAX(total_deaths*100)/MAX(total_cases)) AS FATALITIES
 FROM MY_First_Project..Covid_Deaths$
 WHERE total_cases IS NOT NULL AND  gdp_per_capita IS NOT NULL AND continent IS NOT NULL
 GROUP BY location
 ORDER BY DEATHS DESC
 
--- CONTINENTAL BREAKDOWN (VIDEO)
+-- CONTINENTAL BREAKDOWN 
 SELECT continent, MAX (CAST (total_deaths as int)) AS DEATHS, MAX(total_cases) AS CASES, MAX(gdp_per_capita) AS GDP_PER_CAPITA, (MAX(total_deaths*100)/MAX(total_cases)) AS FATALITIES
 FROM MY_First_Project..Covid_Deaths$
 WHERE total_cases IS NOT NULL AND  gdp_per_capita IS NOT NULL AND continent IS NOT NULL
