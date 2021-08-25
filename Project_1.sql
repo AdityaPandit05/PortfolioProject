@@ -12,7 +12,7 @@ FROM MY_First_Project..Covid_Deaths$
 ORDER BY 1,2
 
 --Total cases v/s Total deaths 
--- Shows the probablility of dying if you contract Covid (Irrespective of person specificies)
+-- Shows the probablility of death if you are infected with Covid-19 (Irrespective of person specificies)
 SELECT location, date, total_cases, total_deaths, (total_deaths*100/total_cases) AS Fatality_Rate
 FROM MY_First_Project..Covid_Deaths$
 WHERE location like '%India%'
